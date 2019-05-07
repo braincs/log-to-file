@@ -57,7 +57,7 @@ public class LogFileManager {
     }
 
     private File createNewLogFile() {
-        return FileUtils.createFile(mLogFileDir + "/Log" + LOG_FILE_DATE_FORMAT.format(new Date()) + ".txt");
+        return FileUtils.createFile(mLogFileDir + File.separator +"Log" + LOG_FILE_DATE_FORMAT.format(new Date()) + ".txt");
     }
 
     private List<File> sortFiles(File[] files) {

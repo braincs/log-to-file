@@ -1,6 +1,7 @@
 package com.liye.log;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -65,6 +66,17 @@ public class FileUtils {
         return null;
     }
 
+    public static File prepareFolder(String folderPath){
+        File file = new File(folderPath);
+
+        if (!file.exists()) {
+            boolean created = file.mkdirs();
+//            if (created) {
+//                Log.d(TAG, "create " + file.getAbsolutePath());
+//            }
+        }
+        return file;
+    }
     public static void writeToFile(String content, String filePath) {
         FileWriter fileWriter = null;
         try {
